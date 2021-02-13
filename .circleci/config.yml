@@ -3,10 +3,10 @@ version: 2.1
 
 jobs:
   test:
+    working_directory: ~/project/testing
     executor:
       name: node/default
       tag: '13.14'
-    app-dir: ~/project/testing
     steps:
       - checkout
       - node/install-packages
