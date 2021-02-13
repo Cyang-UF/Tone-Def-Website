@@ -4,7 +4,7 @@ jobs:
     test:
         docker:
             - image: cimg/ruby:2.7.1-node
-                auth:
+                auth: 
                     username: mydockerhub-user
                     password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         steps:
