@@ -6,10 +6,10 @@ jobs:
     executor:
       name: node/default
       tag: '13.14'
-    app-dir: ~/project/testing
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          app-dir: ~/project/testing
       - run:
           command: npm run test
 orbs:
