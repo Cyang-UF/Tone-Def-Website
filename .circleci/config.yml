@@ -3,13 +3,13 @@ version: 2.1
 
 jobs:
   test:
+    working_directory: ~/project/testing
     executor:
       name: node/default
       tag: '13.14'
     steps:
       - checkout
-      - node/install-packages:
-          app-dir: ~/project/testing
+      - node/install-packages
       - run:
           command: npm run test
 orbs:
