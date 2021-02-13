@@ -6,7 +6,7 @@ jobs:
     executor:
       name: node/default
       tag: '13.14'
-    working_directory: ~/$CIRCLE_WORKING_DIRECTORY/testing
+    app-dir: ~/project/testing
     steps:
       - checkout
       - node/install-packages
