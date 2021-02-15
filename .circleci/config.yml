@@ -11,7 +11,7 @@ jobs:
       tag: '10.4'
     steps:
       - checkout:
-        path: ~/project
+          path: ~/project
       - node/with-cache:
           steps:
             - run: npm install mocha
