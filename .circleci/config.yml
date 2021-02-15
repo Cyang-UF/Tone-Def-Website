@@ -22,8 +22,27 @@ jobs:
           background: true
       - run: sleep 5
       - run: npm run test
+  run:
+    working_directory: ~/project/testing
+    executor:
+      name: node/default
+      tag: '10.4'
+    steps:
+      - checkout:
+          path: ~/project
+      - node/with-cache:
+          steps:
+            - run: npm install mocha
+            - run: alias mocha='./node_modules/.bin/_mocha'
+            - run: npm install
+      - run:
+          command: npm start
+          background: true
+      - run: sleep 5
+      - run: npm run test
 
 workflows:
   testing:
     jobs:
       - build
+      - run
