@@ -1,16 +1,32 @@
-.Right-Side,.Left-Side{
-    height: 100vh;
-    width:100%
+.split{
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.Right-Side{
+.left{
+  left: 0;
+  background:#ffffff;
+    
+}
+.right{
+  right: 0;
+    
     background:#bca3c2;
     
 }
-.Left-Side{
-    background:#ffffff;
-    
-}
+
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+} 
 
 html {
     font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
@@ -50,24 +66,7 @@ html {
   }
 
 
-
-  /* Header */
-  header a {
-    color: #ffffff;
-    padding: 3rem;
-  }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .row.center {
-    justify-content: center;
-  }
-
-
-  /* Common */
+  /* Text Modifiers  */
   a {
     font-size: 5.6rem;
     color: #070707;
@@ -85,7 +84,7 @@ b {
   }
 
 
-/* Image */
+/* Image modifieers*/
 img {
     border-radius: 0.5rem;
   }
