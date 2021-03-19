@@ -11,7 +11,6 @@ const connectDB = async () => {
         useUnifiedTopology: true 
       }
     );
-
     console.log('MongoDB is Connected...');
   } catch (err) {
     console.error(err.message);
