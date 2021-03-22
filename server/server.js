@@ -1,17 +1,27 @@
 // server with database connected
 const express = require('express');
-const connectDB = require('../config/db');   
-const app = express();   // create express application "app"
- 
-// Database connection
-connectDB();    // the connectDB funciton from the module we export in /config/db.js
+const mongoose = require('mongoose');   
+const cors = require('cors');
+require('dotenv').config();
 
-app.use(express.json());
 
-app.get('/', (request,response) => response.send('Hello and welcome to the future Tone Def site!'));
+// Set up express
 
-const port = process.env.PORT || 5000;
+const app = express();      // Create express application "app"
+app.use(cors());            // Our app will use CORS (Cross-Origin Resource Sharing), google for more info
+app.use(express.json());    // Our app will use the JSON parser
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+const PORT = process.env.PORT || 5000;  // When we have it hosted on Heroku, use the environment variable; otherwise, just use port 5000 
+console.log("Starting server");
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+// set up mongoose (the DB)
+
+console.log("Connecting to MongoDB");
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true },(err) => {
+    if (err) return console.error(err);
+    console.log("MongoDB connection established.");
+});
 
 app.use("/posts", require("./routes/postRoutes"));

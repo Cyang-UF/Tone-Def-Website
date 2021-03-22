@@ -1,11 +1,17 @@
 {
   "name": "tone-dev-proj",
   "version": "1.0.0",
-  "description": "Testing Practice",
+  "description": "Tone Def Website by Tone Dev",
   "main": "server.js",
   "scripts": {
     "test": "mocha server.test.js",
-    "start": "node server/server.js"
+    "install-all": "npm install && cd client && npm install",
+    "client": "cd client && npm start",
+    "server": "nodemon server/server.js",
+    "dev": "\"nodemon server/server.js\" \"cd client && npm run start\"",
+    "build": "cd client && npm build",
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "Luke Rouleau",
   "license": "MIT",
@@ -21,6 +27,8 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "config": "^3.3.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mocha": "^8.3.0",
     "mongoose": "^5.11.19",
