@@ -3,7 +3,17 @@ import React from "react";
 function Contact(){
     return(
     <div>
-        <h1>Welcome to the contacts page!</h1>
+        <div class = "grid-container">
+            
+            <div class = "grid-item LeftSide"> 
+             <p id="blocktext"> Bookings </p>
+            </div>
+
+            <div class = "grid-item RightSide">
+            <p id="blocktext"> Contact Us </p>
+            </div>
+
+        </div>
     </div>
     );
 }
