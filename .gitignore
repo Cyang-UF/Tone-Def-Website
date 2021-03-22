@@ -1,5 +1,7 @@
 # ignore the imports
-node_modules/
+/node_modules/
 
 # ignore file containing mondoDB uri key
-config/default.json
+/config/default.json
+/server/.env
+/.env
