@@ -17,12 +17,10 @@ console.log("Starting server");
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 __dirname = path.resolve();
-app.use(express.static(__dirname + '/client/public'));
-
-app.get('/', function(req, res) {
-    res.sendFile('index.html');
-});
-
+app.use(express.static(path.join(__dirname, './client/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build'))
+})
 // set up routes
 
 app.use("/posts", require("./routes/postRoutes"));  // If I make a request to /posts, express will look in the router listed for the initial route
