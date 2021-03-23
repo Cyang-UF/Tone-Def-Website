@@ -3,6 +3,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@1.1.0
+  dotenv: anilanar/dotenv@volatile
 jobs:
   build:
     working_directory: ~/project
@@ -12,6 +13,8 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - dotenv/source:
+                path: .env
       - node/with-cache:
           steps:
             - run: npm run install-all
@@ -19,7 +22,6 @@ jobs:
           command: npm start
           background: true
       - run: sleep 5
-      - run: npm run client
 workflows:
   testing:
     jobs:
