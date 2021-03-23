@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');   
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 
@@ -10,6 +11,14 @@ require('dotenv').config();
 const app = express();      // Create express application "app"
 app.use(cors());            // Our app will use CORS (Cross-Origin Resource Sharing), google for more info
 app.use(express.json());    // Our app will use the JSON parser
+
+__dirname = path.resolve();
+app.use(express.static(__dirname + '/client/public'));
+
+app.get('/', function(req, res) {
+    res.sendFile('index.html');
+});
+
 
 const PORT = process.env.PORT || 5000;  // When we have it hosted on Heroku, use the environment variable; otherwise, just use port 5000 
 console.log("Starting server");
