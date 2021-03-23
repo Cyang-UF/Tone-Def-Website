@@ -1,16 +1,19 @@
 import React from 'react';
-import Music from './Music';
-import Members from './Members';
-import Donate from './Donate';
-import Contact from './Contact';
-import NavBar from './NavBar';
-import Home from './Home';
-import { Route, Link, BrowserRouter } from "react-router-dom";
+import Music from './views/Music';
+import Members from './views/Members';
+import Donate from './views/Donate';
+import Contact from './views/Contact';
+import NavBar from './components/NavBar';
+import Home from './views/Home';
+import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
+import PostList from './components/PostList';
+import Post from './components/Post';
+
 
 
 function App() {
   return (
-  <BrowserRouter>
+  <BrowserRouter> 
     <div>
         <NavBar/> 
       
@@ -19,6 +22,9 @@ function App() {
         <Route exact path="/Members" component={Members}></Route> 
         <Route exact path="/Donate" component={Donate}></Route> 
         <Route exact path="/Contact" component={Contact}></Route>
+        <Route exact path = "/posts/:id" component={Post} />
+        <Route exact path ="/posts" component={PostList}></Route>
+
         
          
     </div>    
@@ -29,4 +35,4 @@ function App() {
 
 export default App;
 
-
+// Anything that we wrap with BrowserRouter will have access to the routing system
