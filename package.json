@@ -9,9 +9,9 @@
     "client": "cd client && npm start",
     "server": "nodemon server/server.js",
     "dev": "\"nodemon server/server.js\" \"cd client && npm run start\"",
-    "build": "cd client && npm build",
+    "build": "cd client && npm install && npm run-script build",
     "start": "node server/server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "npm install && cd client && npm install --no-shrinkwrap && npm run build"
   },
   "author": "Luke Rouleau",
   "license": "MIT",
@@ -35,5 +35,9 @@
     "mongoose": "^5.11.19",
     "request": "^2.67.0",
     "validation": "0.0.1"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   }
 }
