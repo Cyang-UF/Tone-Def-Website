@@ -14,12 +14,12 @@ jobs:
           path: ~/project
       - node/with-cache:
           steps:
-            - run: npm install-all
+            - run: npm run install-all
       - run:
           command: npm start
           background: true
       - run: sleep 5
-      - run: npm client
+      - run: npm run client
 workflows:
   testing:
     jobs:
