@@ -16,7 +16,7 @@ class Home extends React.Component{
   }
 
   async getPosts() {
-      const res = await axios.get('/posts/');
+      const res = await axios.get('http://localhost:5000/posts/');
       this.setState({ posts: res.data });
   }
 
