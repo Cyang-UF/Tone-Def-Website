@@ -1,10 +1,13 @@
 import React from "react";
 
+
 class Donate extends React.Component{
 
     render() {
         return (
             <div>
+               
+                
                 <div class = "grid-container">
                     
                     <div class = "grid-item LeftSide"> 
@@ -13,6 +16,8 @@ class Donate extends React.Component{
 
                     <div class = "grid-item RightSide">
                     <p id="blocktext"> API </p>
+                                 
+
                     </div>
 
                 </div>
