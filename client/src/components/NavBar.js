@@ -7,15 +7,15 @@ function NavBar(){
     return(
         <header className = "HeaderStyle">       
     
-        
-        <Link to="/"> Home</Link>   
-        <Link to="/Music"> Music</Link>  
-        <Link to="/Members"> Members</Link>
-        <Link to="/Contact"> Contact</Link>
-        <Link to="/Donate"> Donate</Link>
-        <Link to="/"> TDA_Icon </Link>
-        <Link to="/posts"> Posts </Link>   
-
+    
+        <Link to="/"> <x>TDA_Icon</x> </Link>
+        <Link to="/"> <x>Home</x> </Link>   
+        <Link to="/Music"> <x>Music</x></Link>  
+        <Link to="/Members"> <x>Members</x></Link>
+        <Link to="/Contact"> <x>Contact</x></Link>
+        <Link to="/Donate"> <x>Donate</x></Link>
+        <Link to="/posts"> <x>Posts</x> </Link>   
+       
         
        
         </header>
