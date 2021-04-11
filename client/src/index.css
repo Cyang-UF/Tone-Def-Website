@@ -1,111 +1,114 @@
 
 html {
-    font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
-    
-  }
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  
+}
 
 
 
 /* Layout */
 .grid-container {  
-    display: grid;
-    grid-template-columns: 1fr 1fr;  
-    height: 922px;
-    
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  height: 922px;
+  
 }
 .LeftSide{
-  background-color: #ffffff;
+background-color: #ffffff;
 }
 .RightSide{
-  background-color: #f8ece4;
+background-color: #f8ece4;
 }
-  
+
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 50%;
-  text-align: center;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 50%;
+text-align: center;
 }
 
 
 /*Nav Bar */
 .HeaderStyle{
-  background-color: #31092e;
-  padding-bottom: 10px;
-  
+background-color: #31092e;
+padding-bottom: 10px;
 }
 
 
 
 
-  /* Text Modifiers  */
-  a {
-    font-size: 4rem;
-    color: #d1d1d1; 
-    text-decoration: none;
-    word-spacing: 10px;
-    
-  }
-  a:hover {
-    color: #ffffff;
-  }
+/* Text Modifiers  */
+a {
+  font-size: 4rem;
+  color: #d1d1d1; 
+  text-decoration: none;
+  word-spacing: 10px;
   
+}
+a:hover {
+  color: #ffffff;
+}
+
 b {
-    padding: 3rem;
-    font-size: 3.5rem;
-    color: #070707;
-    text-decoration: none;
-  }
+  padding: 3rem;
+  font-size: 3.5rem;
+  color: #070707;
+  text-decoration: none;
+}
 
 P { text-align: center }
 X { 
-  font-size: 1.8rem;
-  font-family: "Raleway", sans-serif;
-  padding-left: 1rem;
-  
+font-size: 1.8rem;
+font-family: "Raleway", sans-serif;
+padding-left: 1rem;
+
 }
 
 #blocktext {
-  font-size: 5.6rem;
-  color: #000000; 
-  margin-top: 350px;
-  margin-left: auto;
-  margin-right: auto;
- 
+font-size: 5.6rem;
+color: #000000; 
+margin-top: 50px;
+margin-left: auto;
+margin-right: auto;
+
 }
 
 #blocktext-small {
-  font-size: 2rem;
-  color: #000000; 
-  margin-top: 250px;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
- 
-}
-#blocktext-small2 {
-  font-size: 2rem;
-  color: #000000; 
-  margin-top: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+font-size: 2rem;
+color: #000000; 
+margin-left: 100px;
+margin-right: 100px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
 }
 
 #blocktext-small3 {
-  font-size: 2rem;
-  color: #5e5959; 
-  margin-top: 25px;
-  margin-left: 100px;
-  margin-right: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
- 
+font-size: 2rem;
+color: #5e5959; 
+margin-top: 25px;
+margin-left: 100px;
+margin-right: 100px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+}
+
+#blocktext-title {
+font-size: 8rem;
+border-style:ridge;
+border-color: #000000;
+color: #000000; 
+margin-top: 100px;
+margin-left: 100px;
+margin-right: 100px;
+margin-bottom: 40px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
 }
 
 
 .CR{
-  text-align: right;
+text-align: right;
 }
 
 
@@ -113,37 +116,42 @@ X {
 
 /* Image modifieers*/
 img {
-    border-radius: 0.5rem;
-  }
-  img.FrontCover {
-   
-    width: 400px;
-    height: 300px;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 70%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  image-rendering: crisp-edges;
+}
+
+  
 
 
-  /* Style all font awesome icons */
+/* Style all font awesome icons */
 .fa {
-  padding: 10px;
-  width: 10px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-  margin-right: 5px;
-  margin-bottom: 10px;
-  color: #31092e;
-  }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
-  color: #865782; 
-  }
-  
+padding: 10px;
+width: 10px;
+text-align: center;
+text-decoration: none;
+border-radius: 50%;
+margin-right: 5px;
+margin-bottom: 10px;
+color: #31092e;
+}
 
-  /* SoundCloud */
-  .ReactCSS{
-    padding-top: 25%;
-    padding-left: 15%;
-    
-  }
-  
+/* Add a hover effect if you want */
+.fa:hover {
+color: #865782; 
+}
+
+
+/* SoundCloud */
+.ReactCSS{
+  padding-top: 25%;
+  padding-left: 15%;
+}
