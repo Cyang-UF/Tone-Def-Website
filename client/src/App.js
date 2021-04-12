@@ -8,6 +8,7 @@ import Home from './views/Home';
 import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
 import PostList from './components/PostList';
 import Post from './components/Post';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

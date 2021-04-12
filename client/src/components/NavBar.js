@@ -8,7 +8,7 @@ function NavBar(){
         <header className = "HeaderStyle">       
     
         {/**<Link to="/"> <img src={icon} class = "icon" /> </Link>**/}    
-        <Link to="/"> <x>TD_Icon</x> </Link>
+        <Link to="/"> <img src={icon} class = "icon" /> </Link>
         <Link to="/"> <x>Home</x> </Link>   
         <Link to="/Music"> <x>Music</x></Link>  
         <Link to="/Members"> <x>Members</x></Link>
