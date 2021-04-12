@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from "axios";
 import PostListItem from "../components/PostListItem";
+import logo from '../Images/Capture.JPG';
+
+
 
 
 class Home extends React.Component{
@@ -31,6 +34,12 @@ class Home extends React.Component{
 
           <div class = "grid-item LeftSide"> 
             <p id="blocktext"> Tone Def A Cappella </p>
+          
+           
+            <img src={logo} class = "img" />;
+            
+
+            
 
 
             <div class="footer">

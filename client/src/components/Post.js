@@ -25,7 +25,7 @@ class Post extends React.Component {
         return <div dangerouslySetInnerHTML={this.renderHTML()}></div>;
     }
 
-    render() {
+    render() { 
         return(<div>{this.renderPost()}</div>);
     }
 }
