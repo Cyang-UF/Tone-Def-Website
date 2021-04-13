@@ -8,6 +8,7 @@ import Home from './views/Home';
 import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
 import PostList from './components/PostList';
 import Post from './components/Post';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -16,7 +17,7 @@ function App() {
   <BrowserRouter> 
     <div>
         <NavBar/> 
-      
+        
         <Route exact path="/" component={Home}></Route> 
         <Route exact path="/Music" component={Music}></Route> 
         <Route exact path="/Members" component={Members}></Route> 

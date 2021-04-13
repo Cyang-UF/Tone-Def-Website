@@ -1,9 +1,24 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Raleway&display=swap");
+
 html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   
 }
 
+
+
+.navbar {
+	background-color: #31092f;
+	font-size: 1.1rem;
+  height: 7%;
+	font-family: "Raleway", sans-serif;
+}
+
+.nav-link {
+	background-color: #31092f;
+	font-size: 1.1rem;
+}
 
 
 /* Layout */
@@ -28,12 +43,21 @@ width: 50%;
 text-align: center;
 }
 
+/* Posts */
+.jumbotron {
+  background-color: #a19d9b;
+}
+
+.display-4 {
+  text-align: center;
+}
 
 /*Nav Bar */
-.HeaderStyle{
-background-color: #31092e;
+/* .HeaderStyle{
+background-color: #31092f;
 padding-bottom: 10px;
-}
+} */
+
 
 
 
@@ -44,10 +68,11 @@ a {
   color: #d1d1d1; 
   text-decoration: none;
   word-spacing: 10px;
-  
 }
+
 a:hover {
   color: #ffffff;
+  text-decoration: none;
 }
 
 b {
@@ -58,11 +83,13 @@ b {
 }
 
 P { text-align: center }
-X { 
-font-size: 1.8rem;
-font-family: "Raleway", sans-serif;
-padding-left: 1rem;
-
+x { 
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
+  padding-left: 1rem;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #d1d1d1;
 }
 
 #blocktext {
@@ -124,12 +151,16 @@ img {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  margin-left: 1%;
   image-rendering: crisp-edges;
+  display: inline;
 }
 
-  
+link {
+  display: none;
+}
 
 
 /* Style all font awesome icons */
@@ -139,14 +170,15 @@ width: 10px;
 text-align: center;
 text-decoration: none;
 border-radius: 50%;
-margin-right: 5px;
+margin-right: 15px;
 margin-bottom: 10px;
-color: #31092e;
+color: #31092f;
 }
 
 /* Add a hover effect if you want */
 .fa:hover {
 color: #865782; 
+text-decoration: none;
 }
 
 

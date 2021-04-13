@@ -1,4 +1,7 @@
 import React from "react";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import ReactMarkdown from "react-markdown";
 
 class PostListItem extends React.Component {
     constructor(props) {
@@ -12,9 +15,12 @@ class PostListItem extends React.Component {
     
     renderDate(dateString) {
         const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-        
         const date = new Date(dateString);
         return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    }
+
+    renderBody(body) {
+        return <ReactMarkdown source={body} />;
     }
 
     renderTags(tags) {
@@ -26,11 +32,19 @@ class PostListItem extends React.Component {
     render() {
         const { post } = this.props;
         return(
-            <button onClick={this.onShowPost}>
-                <h3>{post.title}</h3>
-                <span>{this.renderDate(post.createdAt)}</span>
-                <div>{this.renderTags(post.tags)}</div>
-            </button>
+            <Jumbotron>
+            <h1 class = "display-4">{post.title}</h1>
+            <div>{this.renderBody(post.html)}</div>
+            <div>{this.renderTags(post.tags)}</div>
+            <Button variant="primary">Primary</Button>{' '}
+            </Jumbotron>
+
+            // <div class = "jumbotron">
+            // <h3>{post.title}</h3>
+            // <span>{this.renderDate(post.createdAt)}</span>
+            // <div>{this.renderTags(post.tags)}</div>
+            // <button onClick={this.onShowPost}></button>
+            // </div>
         );
     }
 }
