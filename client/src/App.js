@@ -5,9 +5,10 @@ import Donate from './views/Donate';
 import Contact from './views/Contact';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
+import Login from './views/Login';
 import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
-import PostList from './components/PostList';
-import Post from './components/Post';
+import PostList from './components/Posts/PostList';
+import Post from './components/Posts/Post';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -25,7 +26,7 @@ function App() {
         <Route exact path="/Contact" component={Contact}></Route>
         <Route exact path = "/posts/:id" component={Post} />
         <Route exact path ="/posts" component={PostList}></Route>
-
+        <Route exact path ="/login" component={Login}></Route>
         
          
     </div>    

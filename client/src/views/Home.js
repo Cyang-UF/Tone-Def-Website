@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import PostListItem from "../components/PostListItem";
+import PostListItem from "../components/Posts/PostListItem";
 import logo from '../Images/Capture.JPG';
 
 
