@@ -5,3 +5,4 @@
 /config/default.json
 /server/.env
 /.env
+/.vscode
