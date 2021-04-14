@@ -2,6 +2,7 @@ import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 import ReactMarkdown from "react-markdown";
+import { useSelector } from 'react-redux';
 
 class PostListItem extends React.Component {
     constructor(props) {
@@ -49,4 +50,17 @@ class PostListItem extends React.Component {
     }
 }
 
+// Another take on the posts:
+const Posts = () => {
+    const posts = useSelector((state) => state.posts);
+    console.log(posts);
+    return (
+        <Jumbotron>
+            <h1 class = "display-4">POSTS</h1>
+            </Jumbotron>
+    );
+};
+
+
 export default PostListItem;
+//export default Posts;

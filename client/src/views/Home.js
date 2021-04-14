@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import PostListItem from "../components/Posts/PostListItem";
-import logo from '../Images/Capture.JPG';
+import groupPic from '../Images/Capture.JPG';
 
 
 
@@ -36,7 +36,7 @@ class Home extends React.Component{
             <p id="blocktext"> Tone Def A Cappella </p>
           
            
-            <img src={logo} class = "img" />;
+            <img src={groupPic} class = "img" />;
             
 
             

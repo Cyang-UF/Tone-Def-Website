@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Music from './views/Music';
 import Members from './views/Members';
 import Donate from './views/Donate';
@@ -7,13 +7,22 @@ import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Login from './views/Login';
 import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { getPosts } from './actions/posts'
 import PostList from './components/Posts/PostList';
 import Post from './components/Posts/Post';
+//import Form from '.components/Form/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
   return (
   <BrowserRouter> 
     <div>
