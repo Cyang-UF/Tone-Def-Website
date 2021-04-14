@@ -13,6 +13,7 @@ import PostList from './components/Posts/PostList';
 import Post from './components/Posts/Post';
 //import Form from '.components/Form/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PostCreator from './views/PostCreator';
 
 
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route exact path = "/posts/:id" component={Post} />
         <Route exact path ="/posts" component={PostList}></Route>
         <Route exact path ="/login" component={Login}></Route>
+        <Route exact path ="/postCreator" component={PostCreator}></Route>
         
          
     </div>    

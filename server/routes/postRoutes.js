@@ -1,13 +1,10 @@
 const router = require("express").Router();     // create a new router for us
 const PostT1 = require("../models/postModel");
 const PostT2 = require("../models/postModel");
-import { getPosts, createPost, getPostsT2, createPostT2 } from "../controllers/posts.js"
-
-// Where we route for a post request...Since we have to go to mongoose and will be waiting around, use asych with callback
-router.post("/", async (req, res) => {
-    
-    
-});
+const getPosts = require( "../controllers/posts");
+const createPost = require( "../controllers/posts");
+const getPostsT2 = require( "../controllers/posts");
+const createPostT2 = require( "../controllers/posts");
 
 // Retreieve all posts for the html post type
 router.get("/", getPosts);

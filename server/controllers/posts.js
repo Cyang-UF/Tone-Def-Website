@@ -1,14 +1,14 @@
 // Route handlers to keep routes/postRoutes clean
-import PostT1 from "../models/postModel.js";
-import PostT2 from "../models/postModel.js";
+const PostT1 = require("../models/postModel");
+const PostT2 = require("../models/postModel");
 
 // for html post type
-export const getPosts = async (req, res) => {
+const getPosts = async (req, res) => {
     const posts = await PostT1.find();                // Wil find all the posts, since no param in find(). Saves the array in "posts"
     res.json(posts);
 }
 // for markdown post type
-export const getPostsT2 = async (req, res) => {
+const getPostsT2 = async (req, res) => {
     try{
         const posts = await PostT2.find();                // Wil find all the posts, since no param in find(). Saves the array in "posts"
         res.status(200).json(posts);
@@ -23,7 +23,7 @@ export const getPostsT2 = async (req, res) => {
 
 
 // for html post type
-export const createPost = async (req, res) => {
+const createPost = async (req, res) => {
     // retrive data from request
     const { title, createdAt, tags, html } = req.body;
     
@@ -46,7 +46,7 @@ export const createPost = async (req, res) => {
     }
 }
 // for markdown post type
-export const createPostT2 = async (req, res) => {
+const createPostT2 = async (req, res) => {
     // retrive data from request
     const { title, createdAt, tags, selectedFile, likeCount, markdown } = req.body;
     
@@ -71,3 +71,5 @@ export const createPostT2 = async (req, res) => {
         res.status(409).json({ message: error.message });
     }
 } 
+
+module.exports = getPosts, getPostsT2, createPost, createPostT2;
