@@ -19,7 +19,7 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Posts"><x>Posts</x></Nav.Link>
                 </Nav>
                 
-                <Button href="/login" variant ="outline-light">Login</Button>
+                <Button href="/loginPage" variant ="outline-light">Login</Button>
             </Navbar.Collapse>
         </Navbar>  
     );

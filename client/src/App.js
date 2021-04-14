@@ -36,7 +36,7 @@ const App = () => {
         <Route exact path="/Contact" component={Contact}></Route>
         <Route exact path = "/posts/:id" component={Post} />
         <Route exact path ="/posts" component={PostList}></Route>
-        <Route exact path ="/login" component={Login}></Route>
+        <Route exact path ="/loginPage" component={Login}></Route>
         <Route exact path ="/postCreator" component={PostCreator}></Route>
         
          
