@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcryptjs');
 
 // User object in the database needs a username, password, email, and boolean value on whether they are an admin or not
 const userSchema = new mongoose.Schema({
