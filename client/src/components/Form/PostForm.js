@@ -3,20 +3,23 @@ import Jumbotron from'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FileBase from 'react-file-base64';
+import { useDispatch } from 'react-redux';
+import { createPost } from '../../actions/posts';
 
 const PostForm = () => {
+    const [postData, setPostData] = useState({creator: '', title: '', body: '', tags: '', selectedFile: ''});
+    const dispatch = useDispatch();
 
-const [postData, setPostData] = useState({creator: '', title: '', body: '', tags: '', selectedFile: ''});
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
+        dispatch(createPost(postData));
+    }
 
-const handleSubmit = () => {
+    const clear = () => {
 
-}
-
-const clear = () => {
-
-}
+    }
     return(
 
         <Jumbotron>

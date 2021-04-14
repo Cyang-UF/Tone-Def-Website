@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
 // set up routes
 
 app.use("/posts", require("./routes/postRoutes"));  // If I make a request to /posts, express will look in the router listed for the initial route
-
+app.use("/users", require("./routes/userRoutes"));
 
 // set up mongoose (the DB)
 

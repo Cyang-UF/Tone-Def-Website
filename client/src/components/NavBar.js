@@ -18,11 +18,10 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>
                 </Nav>
                 
-                <Button inline href="/login" variant ="outline-light">Login</Button>
+                <Button inline="true" href="/login" variant ="outline-light">Login</Button>
             </Navbar.Collapse>
         </Navbar>  
     );
-        
 }
 
 export default NavBar;

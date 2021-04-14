@@ -51,6 +51,7 @@ class PostListItem extends React.Component {
 }
 
 // Another take on the posts:
+/*
 const Posts = () => {
     const posts = useSelector((state) => state.posts);
     console.log(posts);
@@ -60,7 +61,6 @@ const Posts = () => {
             </Jumbotron>
     );
 };
-
+*/
 
 export default PostListItem;
-//export default Posts;
