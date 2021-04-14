@@ -6,7 +6,7 @@ import {Nav, Navbar, Button} from 'react-bootstrap';
 
 function NavBar(){
     return(   
-        <Navbar expand='lg' fixed="top" variant="light">
+        <Navbar expand='lg' fixed="top" variant="light mb-5">
             {/**<Link to="/"> <img src={icon} class = "icon" /> </Link>**/}    
             <Navbar.Brand as={Link} to="/" ><img src={icon} class = "icon" /></Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
@@ -16,9 +16,10 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Members" ><x>Members</x></Nav.Link>
                     <Nav.Link as={Link} to="/Contact"><x>Contact</x></Nav.Link>
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>
+                    <Nav.Link as={Link} to="/Posts"><x>Posts</x></Nav.Link>
                 </Nav>
                 
-                <Button inline="true" href="/login" variant ="outline-light">Login</Button>
+                <Button href="/login" variant ="outline-light">Login</Button>
             </Navbar.Collapse>
         </Navbar>  
     );
