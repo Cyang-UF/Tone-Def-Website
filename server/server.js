@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');   
 const cors = require('cors');
 const path = require('path');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
@@ -11,7 +12,7 @@ require('dotenv').config();
 const app = express();      // Create express application "app"
 app.use(cors());            // Our app will use CORS (Cross-Origin Resource Sharing), google for more info
 app.use(express.json({ extended: true }));    // Our app will use the JSON parser
-//app.use(urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 const PORT = process.env.PORT || 5000;  // When we have it hosted on Heroku, use the environment variable; otherwise, just use port 5000 
 console.log("Starting server");
@@ -25,6 +26,7 @@ app.get('*', (req, res) => {
 
 // set up routes
 
+app.use("/upgradedposts", require("./routes/upgradedPostRoutes"));
 app.use("/posts", require("./routes/postRoutes"));  // If I make a request to /posts, express will look in the router listed for the initial route
 app.use("/users", require("./routes/userRoutes"));
 

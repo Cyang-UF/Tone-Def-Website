@@ -1,56 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Jumbotron from'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
-import { createPost } from '../../actions/posts';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPost, updatePost } from '../../actions/posts';
 
-const PostForm = () => {
-    const [postData, setPostData] = useState({creator: '', title: '', body: '', tags: '', selectedFile: ''});
+const PostForm = ({ currentId, setCurrentId }) => {
+    // This is for the upgraded posts
+    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
+    // This allows us to actually dispatch actions
     const dispatch = useDispatch();
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         dispatch(createPost(postData));
-    }
+
+        if (currentId === 0) {
+          dispatch(createPost(postData));
+          clear();
+        } else {
+          dispatch(updatePost(currentId, postData));
+          clear();
+        }
+    };
+
+    useEffect(() => {
+        if (post) setPostData(post);
+    }, [post]);
 
     const clear = () => {
+        //setCurrentId(0);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    };
 
-    }
     return(
 
         <Jumbotron>
             <Form>
                 <Form.Group controlId="formBasicTitle">
+                    <Form.Label>Post Creator</Form.Label>
+                    <Form.Control size="lg" type="text" placeholder="Enter enter your name..." fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
+                    <Form.Text className="text-muted">
+                    This will be displayed with the post.
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group controlId="formBasicTitle">
                     <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" placeholder="Enter title..." fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
+                    <Form.Control size="lg" type="text" placeholder="Enter title..." fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
                     <Form.Text className="text-muted">
                     This will be displayed at the top of the post.
                     </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicBody">
-                    <Form.Label>Body</Form.Label>
-                    <Form.Control size="sm" type="text" placeholder="Type your post..." fullWidth value={postData.body} onChange={(e) => setPostData({ ...postData, body: e.target.value })}/>
+                    <Form.Label>Message</Form.Label>
+                    <Form.Control size="lg" type="text" placeholder="Type your post..." fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicTags">
                     <Form.Label>Tags</Form.Label>
-                    <Form.Control size="sm" type="text" placeholder="Add your tags..." fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })}/>
+                    <Form.Control size="lg" type="text" placeholder="Add your comma separated tags..." fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
                 </Form.Group>
 
                 <div>
                     <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
                 </div>
 
-                <Button variant="primary mt-2 mr-3" onSubmit={handleSubmit}>
+                <Button size="lg" variant="primary mt-2 mr-3" onClick={handleSubmit}>
                     Submit
                 </Button>
 
-                <Button variant="outline-danger mt-2" onCLick={clear}>
+                <Button size="lg" variant="outline-danger mt-2" onClick={clear}>
                     Clear
                 </Button>
 

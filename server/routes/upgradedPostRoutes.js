@@ -1,11 +1,11 @@
 const router = require("express").Router();     // create a new router for us
-const Post = require("../models/upgradedPostModel");
+const UpgradedPost = require("../models/upgradedPostModel");
 
 router.get('/', async (req, res) => { 
     try {
-        const postMessages = await PostMessage.find();
+        const UpgradedPost = await UpgradedPost.find();
                 
-        res.status(200).json(postMessages);
+        res.status(200).json(UpgradedPost);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -14,12 +14,12 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { title, message, selectedFile, creator, tags } = req.body;
 
-    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+    const newUpgradedPost = new UpgradedPost({ title, message, selectedFile, creator, tags })
 
     try {
-        await newPostMessage.save();
+        await newUpgradedPost.save();
 
-        res.status(201).json(newPostMessage );
+        res.status(201).json(newUpgradedPost );
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
-        const post = await PostMessage.findById(id);
+        const post = await UpgradedPost.findById(id);
         
         res.status(200).json(post);
     } catch (error) {
@@ -45,7 +45,7 @@ router.patch('/:id', async (req, res) => {
 
     const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
 
-    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+    await UpgradedPost.findByIdAndUpdate(id, updatedPost, { new: true });
 
     res.json(updatedPost);
 });
@@ -55,7 +55,7 @@ router.delete('/:id', async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-    await PostMessage.findByIdAndRemove(id);
+    await UpgradedPost.findByIdAndRemove(id);
 
     res.json({ message: "Post deleted successfully." });
 });
@@ -65,9 +65,9 @@ router.patch('/:id/likePost', async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
     
-    const post = await PostMessage.findById(id);
+    const post = await UpgradedPost.findById(id);
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+    const updatedPost = await UpgradedPost.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
     
     res.json(updatedPost);
 });
