@@ -8,8 +8,8 @@ import { createPost, updatePost } from '../../actions/posts';
 
 const PostForm = ({ currentId, setCurrentId }) => {
     // This is for the upgraded posts
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
+    const [postData, setPostData] = useState({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
+    const post = useSelector((state) => (currentId ? state.posts.find((html) => html._id === currentId) : null));
     // This allows us to actually dispatch actions
     const dispatch = useDispatch();
 
@@ -34,21 +34,13 @@ const PostForm = ({ currentId, setCurrentId }) => {
 
     const clear = () => {
         //setCurrentId(0);
-        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+        setPostData({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
     };
 
     return(
 
         <Jumbotron>
             <Form>
-                <Form.Group controlId="formBasicTitle">
-                    <Form.Label>Post Creator</Form.Label>
-                    <Form.Control size="lg" type="text" placeholder="Enter enter your name..." fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
-                    <Form.Text className="text-muted">
-                    This will be displayed with the post.
-                    </Form.Text>
-                </Form.Group>
-
                 <Form.Group controlId="formBasicTitle">
                     <Form.Label>Title</Form.Label>
                     <Form.Control size="lg" type="text" placeholder="Enter title..." fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
@@ -59,17 +51,13 @@ const PostForm = ({ currentId, setCurrentId }) => {
 
                 <Form.Group controlId="formBasicBody">
                     <Form.Label>Message</Form.Label>
-                    <Form.Control size="lg" type="text" placeholder="Type your post..." fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
+                    <Form.Control size="lg" type="text" placeholder="Type your post..." fullWidth value={postData.html} onChange={(e) => setPostData({ ...postData, html: e.target.value })}/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicTags">
                     <Form.Label>Tags</Form.Label>
                     <Form.Control size="lg" type="text" placeholder="Add your comma separated tags..." fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
                 </Form.Group>
-
-                <div>
-                    <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
-                </div>
 
                 <Button size="lg" variant="primary mt-2 mr-3" onClick={handleSubmit}>
                     Submit

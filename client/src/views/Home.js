@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from "axios";
-import PostListItem from "../components/Posts/PostListItem";
+//import PostListItem from "../components/Posts/PostListItem";
+import UpgradedPostListItem from "../components/Posts/UpgradedPostListItem";
 import groupPic from '../Images/Capture.JPG';
-
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -17,13 +19,14 @@ class Home extends React.Component{
 
   async getPosts() {
       const res = await axios.get('/posts/');
+      //const res = await axios.get('/upgradedposts/');
       this.setState({ posts: res.data });
   }
 
   // return a collection of multiple <div>s to represent each blog post item
   renderList() {
-      return this.state.posts.map(post => {
-          return <PostListItem post={post} key={post._id}/>;
+      return this.state.posts.reverse().slice(0,3).map(post => {
+          return <UpgradedPostListItem post={post} key={post._id}/>;
       });
   }
 
@@ -57,8 +60,9 @@ class Home extends React.Component{
           </div>
 
           <div class = "grid-item RightSide">
-            <p id="blocktext"> The Feed </p>
+            <p id="blocktext"> Recent Posts </p>
             <div>{this.renderList()}</div>
+            <div class="col text-center"><Button as={Link} to="/Posts" variant="dark">More</Button>{' '}</div>
           </div>   
         </div>
       );

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import PostListItem from "./PostListItem";
+import UpgradedPostListItem from "./UpgradedPostListItem";
 
 class PostList extends React.Component {
     state = {
@@ -18,8 +18,8 @@ class PostList extends React.Component {
 
     // return a collection of multiple <div>s to represent each blog post item
     renderList() {
-        return this.state.posts.map(post => {
-            return <PostListItem post={post} key={post._id}/>;
+        return this.state.posts.reverse().map(post => {
+            return <UpgradedPostListItem post={post} key={post._id}/>;
         });
     }
     
