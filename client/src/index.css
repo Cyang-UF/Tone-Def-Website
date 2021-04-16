@@ -6,7 +6,9 @@ html {
   
 }
 
-
+body {
+  padding-top: 50px;
+}
 
 .navbar {
 	background-color: #31092f;

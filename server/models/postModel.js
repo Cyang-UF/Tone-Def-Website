@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 // Just an object that is the structure for a post, data-wise
 const postSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    createdAt: { type: Date, required: true },
+    title: { type: String },
+    createdAt: { type: Date, default: new Date(), required: false },
     tags: { type: [String] },
-    html: { type: String, required: true }
+    html: { type: String }
 });
 
 // Convert the object to a model, which is what Mongoose uses

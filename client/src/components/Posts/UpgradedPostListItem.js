@@ -1,9 +1,9 @@
 import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Button from 'react-bootstrap/Button';
 import ReactMarkdown from "react-markdown";
+import { useSelector } from 'react-redux';
 
-class PostListItem extends React.Component {
+class UpgradedPostListItem extends React.Component {
     constructor(props) {
         super(props);                                   // Be explict in the consturctor to give us access to props of this class
         this.onShowPost = this.onShowPost.bind(this);   // Bind 'this' to the whole class rather than a single function
@@ -19,24 +19,46 @@ class PostListItem extends React.Component {
         return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
 
-    renderBody(body) {
-        return <ReactMarkdown source={body} />;
-    }
+    renderBody(body, MAX_LENGTH) {
+        return(
+            <div>
+                {{body}.length > MAX_LENGTH ?
+                (
+                    <div>
+                        {`${{body}.substring(0, MAX_LENGTH)}...`}<a href="#">Read more</a>
+                    </div>
+                ) :
+                <p>{body}</p>
+                }
+            </div>
+        );
+    } 
+
+    
 
     renderTags(tags) {
         return tags.map(tag => {
             return <span key={tag}>{tag}</span>;
         });
     }
+
+    renderImage() {
+
+    }
     
     render() {
         const { post } = this.props;
         return(
             <Jumbotron>
-            <h1 class = "display-4">{post.title}</h1>
-            <div>{this.renderBody(post.html)}</div>
+            <h1 class = "display-4"><strong>{post.title}</strong></h1>
+            <h1 class = "display-4">{post.creator}</h1>
+            <h1 class = "display-6">{this.renderDate(post.createdAt)}</h1>
+            <div>
+                {this.renderBody(post.html, 100)}
+            </div>
+            <div><strong>Tags:</strong></div>
             <div>{this.renderTags(post.tags)}</div>
-            <Button variant="primary">Primary</Button>{' '}
+            <div>{post.creator}</div>
             </Jumbotron>
 
             // <div class = "jumbotron">
@@ -49,4 +71,17 @@ class PostListItem extends React.Component {
     }
 }
 
-export default PostListItem;
+// Another take on the posts:
+/*
+const Posts = () => {
+    const posts = useSelector((state) => state.posts);
+    console.log(posts);
+    return (
+        <Jumbotron>
+            <h1 class = "display-4">POSTS</h1>
+            </Jumbotron>
+    );
+};
+*/
+
+export default UpgradedPostListItem;
