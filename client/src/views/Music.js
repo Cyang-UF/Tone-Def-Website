@@ -10,7 +10,7 @@ class Music extends React.Component{
 
                     <div class = "grid-item LeftSide"> 
                         <div class = "ReactCSS" >
-                        <ReactPlayer url="https://soundcloud.com/theweeknd/sets/house-of-balloons-original"/>                                                   
+                        <ReactPlayer url="https://soundcloud.com/tonedefacappella/when-the-partys-over"/>                                                   
                         </div>
                     </div>
 
