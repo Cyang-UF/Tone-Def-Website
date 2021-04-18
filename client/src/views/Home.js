@@ -39,7 +39,7 @@ class Home extends React.Component{
             <p id="blocktext"> Tone Def A Cappella </p>
           
            
-            <img src={groupPic} class = "img" />;
+            <img src={groupPic} class = "img" />
             
 
             
