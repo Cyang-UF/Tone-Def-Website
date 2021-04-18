@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios";
-//import PostListItem from "../components/Posts/PostListItem";
 import UpgradedPostListItem from "../components/Posts/UpgradedPostListItem";
 import groupPic from '../Images/Capture.JPG';
 import { Link } from 'react-router-dom';

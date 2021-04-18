@@ -15,7 +15,7 @@ class Music extends React.Component{
                     </div>
 
                     <div class = "grid-item RightSide">
-                        <p id="blocktext-title">Specturm</p>
+                        <p id="blocktext-title">SPECTRUM </p>
 
                         <p id="blocktext-small"> In March 2019, with the help of our family and friends, we recorded our
                         first studio album! The name SPECTRUM embodies our wide range of backgrounds, perspectives,

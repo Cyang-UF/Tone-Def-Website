@@ -7,15 +7,17 @@ import {Nav, Navbar, Button} from 'react-bootstrap';
 function NavBar(){
     return(   
         <Navbar expand='lg' fixed="top" variant="light mb-5">
-            {/**<Link to="/"> <img src={icon} class = "icon" /> </Link>**/}    
+
             <Navbar.Brand as={Link} to="/" ><img src={icon} class = "icon" /></Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
+                
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/" ><x>Home</x></Nav.Link>
+                    <Nav.Link as={Link} to="/About"><x>About</x></Nav.Link>
                     <Nav.Link as={Link} to="/Music" ><x>Music</x></Nav.Link>
                     <Nav.Link as={Link} to="/Members" ><x>Members</x></Nav.Link>
                     <Nav.Link as={Link} to="/Contact"><x>Contact</x></Nav.Link>
-                    <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>
+                    <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>                    
                     <Nav.Link as={Link} to="/Posts"><x>Posts</x></Nav.Link>
                 </Nav>
                 
