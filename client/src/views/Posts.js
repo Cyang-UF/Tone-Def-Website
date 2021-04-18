@@ -7,7 +7,7 @@ class Posts extends React.Component{
         return (
             <div>
                 <h1 class="mt-3">Post History</h1>
-                <h3>Refreshing the page or clicking the 'Posts' tab again will flip the chronological post ordering.</h3>
+                <h3>Click'Posts' tab to reverse the chronological post ordering.</h3>
                 <PostList/>
             </div>
         );

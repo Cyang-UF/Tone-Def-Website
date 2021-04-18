@@ -18,7 +18,7 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Members" ><x>Members</x></Nav.Link>
                     <Nav.Link as={Link} to="/Contact"><x>Contact</x></Nav.Link>
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>                    
-                    <Nav.Link as={Link} to="/Posts"><x>Posts</x></Nav.Link>
+                    <Nav.Link as={Link} to="/PostsPage"><x>Posts</x></Nav.Link>
                 </Nav>
                 
                 <Button as={Link} to="/loginPage" variant = "outline-light">Login</Button>

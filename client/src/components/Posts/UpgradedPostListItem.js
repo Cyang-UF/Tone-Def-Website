@@ -1,7 +1,6 @@
 import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import ReactMarkdown from "react-markdown";
-import { useSelector } from 'react-redux';
+import moment from 'moment';
 
 class UpgradedPostListItem extends React.Component {
     constructor(props) {
@@ -52,11 +51,15 @@ class UpgradedPostListItem extends React.Component {
             <Jumbotron>
             <h1 class = "display-4"><strong>{post.title}</strong></h1>
             <h1 class = "display-6">{this.renderDate(post.createdAt)}</h1>
-            <div>
+            <h4>{moment(post.createdAt).fromNow()}</h4>
+            <div class="mt-3">
                 {this.renderBody(post.html, 100)}
             </div>
             <div><strong>Tags:</strong></div>
-            <div>{this.renderTags(post.tags)}</div>
+            <div>{post.tags.map((tag)=>`#${tag} `)}</div>
+            <div>
+                <button type="button" class="btn btn-info btn-sm" onClick={() => {}}>Like</button>
+            </div>
             </Jumbotron>
 
         );
