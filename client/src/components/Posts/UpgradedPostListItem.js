@@ -61,27 +61,9 @@ class UpgradedPostListItem extends React.Component {
             <div>{post.creator}</div>
             </Jumbotron>
 
-            // <div class = "jumbotron">
-            // <h3>{post.title}</h3>
-            // <span>{this.renderDate(post.createdAt)}</span>
-            // <div>{this.renderTags(post.tags)}</div>
-            // <button onClick={this.onShowPost}></button>
-            // </div>
         );
     }
 }
 
-// Another take on the posts:
-/*
-const Posts = () => {
-    const posts = useSelector((state) => state.posts);
-    console.log(posts);
-    return (
-        <Jumbotron>
-            <h1 class = "display-4">POSTS</h1>
-            </Jumbotron>
-    );
-};
-*/
 
 export default UpgradedPostListItem;
