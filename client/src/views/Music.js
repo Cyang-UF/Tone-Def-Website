@@ -11,10 +11,12 @@ class Music extends React.Component{
                     <div class = "grid-item LeftSide"> 
                         <div class = "ReactCSS" >
                             <ReactPlayer width="auto"   class="MusicPlayer" url="https://soundcloud.com/theweeknd/sets/house-of-balloons-original"/>
+
                         </div>
                     </div>
 
                     <div class = "grid-item RightSide">
+
                         <p id="blocktext-title">Spectrum</p>
 
                         <p id="blocktext-small"> In March 2019, with the help of our family and friends, we recorded our

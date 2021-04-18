@@ -27,8 +27,7 @@ body {
 .grid-container {  
   display: grid;
   grid-template-columns: 1fr 1fr;  
-  height: 922px;
-  
+  height:950px;
 }
 .LeftSide{
 background-color: #ffffff;
@@ -55,15 +54,6 @@ text-align: center;
 .display-4 {
   text-align: center;
 }
-
-/*Nav Bar */
-/* .HeaderStyle{
-background-color: #31092f;
-padding-bottom: 10px;
-} */
-
-
-
 
 
 /* Text Modifiers  */
@@ -156,8 +146,6 @@ text-align: right;
 }
 
 
-
-
 /* Image modifieers*/
 img {
   display: block;
@@ -173,6 +161,23 @@ img {
 .donatePic{
   border-radius: 2rem;
 }
+
+.img2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: 50%;
+}
+
+.img3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 70%;
+}
+
 
 .icon {
   width: 30px;
@@ -210,6 +215,7 @@ text-decoration: none;
 .ReactCSS{
   padding-top: 25%;
   padding-left: 15%;
+ 
 }
 
 

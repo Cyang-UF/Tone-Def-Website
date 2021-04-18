@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Music from './views/Music';
+import About from './views/About';
 import Members from './views/Members';
 import Donate from './views/Donate';
 import Contact from './views/Contact';
@@ -9,7 +10,7 @@ import Login from './views/Login';
 import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { getPosts } from './actions/posts'
-import PostList from './components/Posts/PostList';
+import Posts from './views/Posts';
 import Post from './components/Posts/Post';
 //import Form from '.components/Form/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -33,9 +34,10 @@ const App = () => {
         <Route exact path="/Music" component={Music}></Route> 
         <Route exact path="/Members" component={Members}></Route> 
         <Route exact path="/Donate" component={Donate}></Route> 
+        <Route exact path="/About" component={About}></Route> 
         <Route exact path="/Contact" component={Contact}></Route>
         <Route exact path = "/posts/:id" component={Post} />
-        <Route exact path ="/posts" component={PostList}></Route>
+        <Route exact path ="/Posts" component={Posts}></Route>
         <Route exact path ="/loginPage" component={Login}></Route>
         <Route exact path ="/postCreator" component={PostCreator}></Route>
         

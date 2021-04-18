@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios";
-//import PostListItem from "../components/Posts/PostListItem";
 import UpgradedPostListItem from "../components/Posts/UpgradedPostListItem";
 import groupPic from '../Images/Capture.JPG';
 import { Link } from 'react-router-dom';
@@ -61,6 +60,7 @@ class Home extends React.Component{
 
           <div class = "grid-item RightSide">
             <p id="blocktext"> Recent Posts </p>
+            <h4 style={{display: "flex", justifyContent: "center", alignItems: "center"}}>Click 'Home' Tab to view oldests posts.</h4>
             <div>{this.renderList()}</div>
             <div class="col text-center"><Button as={Link} to="/Posts" variant="dark">More</Button>{' '}</div>
           </div>   
