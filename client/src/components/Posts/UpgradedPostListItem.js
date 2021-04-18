@@ -51,14 +51,12 @@ class UpgradedPostListItem extends React.Component {
         return(
             <Jumbotron>
             <h1 class = "display-4"><strong>{post.title}</strong></h1>
-            <h1 class = "display-4">{post.creator}</h1>
             <h1 class = "display-6">{this.renderDate(post.createdAt)}</h1>
             <div>
                 {this.renderBody(post.html, 100)}
             </div>
             <div><strong>Tags:</strong></div>
             <div>{this.renderTags(post.tags)}</div>
-            <div>{post.creator}</div>
             </Jumbotron>
 
         );
