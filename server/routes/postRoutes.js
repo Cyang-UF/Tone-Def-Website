@@ -5,10 +5,10 @@ const Post = require("../models/postModel");
 router.post("/", async (req, res) => {
     
     // retrive data from request
-    const { title, message, selectedFile, creator, tags } = req.body;
+    const { title, tags, html } = req.body;
     
     // construct post model
-    const newPost = new Post({ title, message, selectedFile, creator, tags });
+    const newPost = new Post({ title,tags, html });
 
     // save post model, try-catch for the success of saving a post or not
     try {
