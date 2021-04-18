@@ -60,6 +60,7 @@ class Home extends React.Component{
 
           <div class = "grid-item RightSide">
             <p id="blocktext"> Recent Posts </p>
+            <span style={{display: "flex", justifyContent: "center", alignItems: "center"}}>Click 'Home' Tab to view oldests posts.</span>
             <div>{this.renderList()}</div>
             <div class="col text-center"><Button as={Link} to="/Posts" variant="dark">More</Button>{' '}</div>
           </div>   
