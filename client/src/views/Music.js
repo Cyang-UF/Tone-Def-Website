@@ -10,7 +10,14 @@ class Music extends React.Component{
 
                     <div class = "grid-item LeftSide"> 
                         <div class = "ReactCSS" >
-                        <ReactPlayer url="https://soundcloud.com/tonedefacappella/when-the-partys-over"/>                                                   
+                        <ReactPlayer class="MusicPlayer" url="https://soundcloud.com/tonedefacappella/when-the-partys-over"/>                                                   
+                        </div>
+                        
+                        <div>
+                            <p class="mt-3" id="blocktext-small"> In March 2019, with the help of our family and friends, we recorded our
+                            first studio album! The name SPECTRUM embodies our wide range of backgrounds, perspectives,
+                            and interests, and we aimed to show this through the variety of songs in the album.
+                            </p>
                         </div>
 
                         <div class="footer">
@@ -24,19 +31,7 @@ class Music extends React.Component{
                     </div>
 
                     <div class = "grid-item RightSide">
-                        <p id="blocktext-title">SPECTRUM </p>
-
-                        <p id="blocktext-small"> In March 2019, with the help of our family and friends, we recorded our
-                        first studio album! The name SPECTRUM embodies our wide range of backgrounds, perspectives,
-                        and interests, and we aimed to show this through the variety of songs in the album. The songs
-                        differ in times and genres but somehow seem to work well together for the greater cause of 
-                        bringing happiness to people through music, much like our own group through the years. We hope 
-                        you enjoy it as much as we do.
-                        </p>
-
-                        <p id="blocktext-small">As of December 2020, SPECTRUM is currently unavailable to stream. It will be made available again
-                        soon, and we will let you all know when that time comes!  </p>
-
+                        <p id="blocktext-title">SPECTRUM</p>
 
                         <p id="blocktext-small3">............................................................</p>
 
@@ -44,13 +39,22 @@ class Music extends React.Component{
 
                         <p id="blocktext-small3">Bottom of the River</p>
 
-                        <p id="blocktext-small3">when the party's over</p>
+                        <p id="blocktext-small3">When The Party's Over</p>
 
                         <p id="blocktext-small3">Whipping Post</p>
 
-                        <p id="blocktext-small3">Lost in the World</p>
+                        <p id="blocktext-small3">Lost in he World</p>
+
+                        <p id="blocktext-small3">............................................................</p>
 
 
+                        <p id="blocktext-small" > 
+                            Each track seemlessly and artfully blends a dynamic array of genres and emotions. To us, The five compositions
+                            of SPECTRUM represent the greater cause of bringing happiness to people through music, much like our own group through the years. 
+                        </p>
+                        <p id="blocktext-small">
+                        We hope you enjoy it as much as we do.
+                        </p>
                     </div>
 
                 </div>
