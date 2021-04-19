@@ -15,7 +15,7 @@ function NavBar(){
                     <Nav.Link as={Link} to="/" ><x>Home</x></Nav.Link>
                     <Nav.Link as={Link} to="/About"><x>About</x></Nav.Link>
                     <Nav.Link as={Link} to="/Music" ><x>Music</x></Nav.Link>
-                    <Nav.Link as={Link} to="/Members" ><x>Members</x></Nav.Link>
+                    <Nav.Link as={Link} to="/Audition" ><x>Audition</x></Nav.Link>
                     <Nav.Link as={Link} to="/Contact"><x>Contact</x></Nav.Link>
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>                    
                     <Nav.Link as={Link} to="/PostsPage"><x>Posts</x></Nav.Link>

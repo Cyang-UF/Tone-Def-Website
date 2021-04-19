@@ -1,5 +1,5 @@
 import React from "react";
-import AboutPic from '../Images/About.jpg';
+import Paulina from '../Images/member-paulina.jpg';
 import AboutPic2 from '../Images/dna_group_pic.jpg';
 
 
@@ -28,16 +28,33 @@ class About extends React.Component{
                     </div>
 
                     <div class = "grid-item RightSide">
-                        <p id="blocktext"> What We Do </p>
-                        <p id="blocktext-small">When we're not volunteering around the community, we're preparing for ICCA or hanging out with our Dance Marathon Miracle 
-                        Children Ayden and Emily (past and present, respectively)!</p>
-                        
+                        <p id="blocktext"> Current Members </p>
 
-                        <img src={AboutPic} class = "img2" />
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="card" style={{borderRadius: "1rem"}}>
+                                <img src={Paulina} class = "cardImg" />
 
-                        <p id="blocktext-small">If you'd like to hear some of our work, check out our album SPECTRUM, a reflective culmination
-                         of the group's diversity through the years. Other projects are in the works, so watch out for latest announcements and keep track of our activities
-                          on social media (@tdacappella)!</p>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <div class="member-bold">
+                                            President - Paulina Liwanag
+                                        </div>
+                                        <div class="member-bold">Voice Part - Alto</div>
+                                        <div class="member-info">
+                                            <p>Hometown: Lake Wales, FL</p>
+                                            <p>Major: Computer Science</p>
+                                            <p>Member Since: Fall 2018</p>
+                                            <p>
+                                                Audition Song: "If I Never See Your Face
+                                                Again" by Maroon 5
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+			
 
 
                     </div>

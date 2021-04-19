@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Music from './views/Music';
 import About from './views/About';
-import Members from './views/Members';
+import Audition from './views/Audition';
 import Donate from './views/Donate';
 import Contact from './views/Contact';
 import NavBar from './components/NavBar';
@@ -32,7 +32,7 @@ const App = () => {
         
         <Route exact path="/" component={Home}></Route> 
         <Route exact path="/Music" component={Music}></Route> 
-        <Route exact path="/Members" component={Members}></Route> 
+        <Route exact path="/Audition" component={Audition}></Route> 
         <Route exact path="/Donate" component={Donate}></Route> 
         <Route exact path="/About" component={About}></Route> 
         <Route exact path="/Contact" component={Contact}></Route>
