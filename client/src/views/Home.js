@@ -19,7 +19,6 @@ class Home extends React.Component{
 
   async getPosts() {
       const res = await axios.get('/posts/');
-      //const res = await axios.get('/upgradedposts/');
       this.setState({ posts: res.data });
   }
 

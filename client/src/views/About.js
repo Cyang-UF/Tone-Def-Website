@@ -1,9 +1,15 @@
 import React from "react";
 import Paulina from '../Images/member-paulina.jpg';
+import Georgina from '../Images/member-georgina.jpg';
+import Nina from '../Images/member-nina.jpg';
 import AboutPic2 from '../Images/dna_group_pic.jpg';
+import NoPic from '../Images/td-logo-black-circle.png'
+import MemberCard from "../components/MemberCard";
 
 
 class About extends React.Component{
+    paulinaCard = <MemberCard title="Test Title"/>;
+
     render() {
         return (
             <div>                            
@@ -30,35 +36,112 @@ class About extends React.Component{
                     <div class = "grid-item RightSide">
                         <p id="blocktext"> Current Members </p>
 
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                            <div class="card" style={{borderRadius: "1rem"}}>
-                                <img src={Paulina} class = "cardImg" />
+                        <div class="member-grind-container">
+                            <MemberCard 
+                                src={Paulina}
+                                title="President - Paulina Liwanag"
+                                part="Voice Part - Alto"
+                                hometown="Hometown: Lake Wales, FL"
+                                major="Major: Computer Science"
+                                joined="Member Since: Fall 2018"
+                                song='Audition Song: "If I Never See Your Face
+                                Again" by Maroon 5'
+                            />
+                        
+                        
+                            <MemberCard
+                                src={Georgina}
+                                title="Georgina Vitola"
+                                part="Voice Part - Soprano"
+                                hometown="Hometown: Brooksville, FL"
+                                major="Major: Marketing"
+                                joined="Member Since: Fall 2019"
+                                song='Audition Song: "Make You Feel My Love" by Adele'
+                            />
 
-                                <div class="card-body">
-                                    <div class="card-text">
-                                        <div class="member-bold">
-                                            President - Paulina Liwanag
-                                        </div>
-                                        <div class="member-bold">Voice Part - Alto</div>
-                                        <div class="member-info">
-                                            <p>Hometown: Lake Wales, FL</p>
-                                            <p>Major: Computer Science</p>
-                                            <p>Member Since: Fall 2018</p>
-                                            <p>
-                                                Audition Song: "If I Never See Your Face
-                                                Again" by Maroon 5
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-			
+                            <MemberCard
+                                src={Nina}
+                                title="Nina Cortez"
+                                part="Voice Part - Soprano"
+                                hometown="Hometown: Brooksville, FL"
+                                major="Major: Marketing"
+                                joined="Member Since: Fall 2019"
+                                song='Audition Song: "Make You Feel My Love" by Adele'
+                            />
+                            <MemberCard
+                                src={NoPic}
+                                title="Alex Kim"
+                                part="Voice Part - Bass"
+                                hometown="Hometown: Orlando, FL"
+                                major="Major: Chemistry"
+                                joined="Member Since: Spring 2019"
+                                song='Audition Song: "Agony" from Into the Woods'
+                            />
+
+                            <MemberCard
+                                src={NoPic}
+                                title="Music Director - Leo Bergmiller"
+                                part="Voice Part - Tenor"
+                                hometown="Hometown: Somewhere, FL"
+                                major="Major: Statistics"
+                                joined="Member Since: Spring 2021"
+                                song='Audition Song: "Moon River" by Jacob Collier'
+                            />
+
+                            <MemberCard
+                                src={NoPic}
+                                title="Assistant Music Director - Luke Rouleau"
+                                part="Voice Part - Tenor"
+                                hometown="Hometown: Lakeland, FL"
+                                major="Major: Computer Engineering"
+                                joined="Member Since: Fall 2020"
+                                song='Audition Song: "Best Part" by Daniel Caesar'
+                            />
+                            <MemberCard
+                                src={NoPic}
+                                title="Nicole Americano"
+                                part="Voice Part - Soprano"
+                                hometown="Hometown: Miami, FL"
+                                major="Major: Business"
+                                joined="Member Since: Spring 2021"
+                                song='Audition Song: "Just the Two of Us" by Bill Withers'
+                            />
+
+                            <MemberCard
+                                src={NoPic}
+                                title="Aaron Ivey"
+                                part="Voice Part - Tenor"
+                                hometown="Hometown: Somewhere, FL"
+                                major="Major: Business"
+                                joined="Member Since: Spring 2021"
+                                song='Audition Song: "Fly Me to the Moon" by Frank Sinatra'
+                            />
+
+                            <MemberCard
+                                src={NoPic}
+                                title="Avery Chard"
+                                part="Voice Part - Alto"
+                                hometown="Hometown: Somewhere, FL"
+                                major="Major: Business"
+                                joined="Member Since: Spring 2021"
+                                song='Audition Song: "The Star Spangled Banner" by Francis Scott Key'
+                            />
+
+                            <MemberCard
+                                src={NoPic}
+                                title="Grace Marten"
+                                part="Voice Part - Alto"
+                                hometown="Hometown: Somewhere, FL"
+                                major="Major: Aquaponics"
+                                joined="Member Since: Spring 2021"
+                                song='Audition Song: "Fireflies" by Owl City'
+                            />
 
 
+                            
+						</div>
+					
                     </div>
-
                 </div>
             </div>
         );

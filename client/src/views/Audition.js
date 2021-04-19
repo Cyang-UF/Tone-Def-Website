@@ -25,7 +25,7 @@ class Audition extends React.Component {
                 </div>
 
                 <div class = "grid-item RightSide">
-                <p id="blocktext"> Contact Us </p>
+                <p id="blocktext" > Contact Us </p>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyHFQ5CNDVF_7jgZ9B2Jf4KAiyz1ePzbz8MyNYp9OdS23-Xw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
                 

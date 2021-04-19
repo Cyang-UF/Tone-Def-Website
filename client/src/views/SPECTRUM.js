@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player"
 
 
-class Music extends React.Component{
+class SPECTRUM extends React.Component{
     render() {
         return (
             <div>
@@ -63,4 +63,4 @@ class Music extends React.Component{
     }
 } 
 
-export default Music;
+export default SPECTRUM;
