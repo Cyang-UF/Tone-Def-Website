@@ -1,6 +1,6 @@
 // server with database connected
 const express = require('express');
-const mongoose = require('mongoose');   
+const mongoose = require('mongoose');  
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -19,15 +19,19 @@ console.log("Starting server");
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build'))
-})
+app.use(express.static(path.join(__dirname, './client/build')));
+
+
 
 // set up routes
 
 app.use("/posts", require("./routes/postRoutes"));  // If I make a request to /posts, express will look in the router listed for the initial route
 app.use("/users", require("./routes/userRoutes"));
+
+// Catchall handler
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+  });
 
 // set up mongoose (the DB)
 
