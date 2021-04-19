@@ -43,6 +43,8 @@ class SPECTRUM extends React.Component{
                     </div>
 
                     <div class = "grid-item RightSide">
+
+                        <p id="blocktext-title">Soundcloud</p>
                         <div class = "ReactCSS" >
                         <ReactPlayer class="MusicPlayer" url="https://soundcloud.com/tonedefacappella/when-the-partys-over"/>                                                   
                         </div>

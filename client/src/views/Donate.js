@@ -9,8 +9,10 @@ class Donate extends React.Component{
             <div class = "grid-container">
                 
                 <div class = "grid-item LeftSide"> 
-                    <p id="blocktext">  Donate </p>
-                    <img class="donatePic" src={groupPic}  />
+                    <p id="blocktext-title">  Donate </p>
+                    <img src={groupPic} class = "donatePic"/>
+                    <p id="blocktext-small">Dance Marathon Miracle Fundraising Team</p>
+                    
                 </div>
 
                 <div class = "grid-item RightSide">
