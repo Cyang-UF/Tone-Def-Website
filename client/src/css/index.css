@@ -84,8 +84,10 @@ border-radius: 2rem;
   background-color: #fffbf8;
   border-radius: 2rem;  
   max-width: 95%;
-  margin: auto;
-
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .display-4 {
