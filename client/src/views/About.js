@@ -24,31 +24,27 @@ class About extends React.Component{
                         we understand the increbile power that music has to bring people together. This is why service is a cornerstone of our organization.</p>
 
                         <p id="blocktext" style={{marginTop: "5rem"}}> Our Repertoire </p>
-                        <p id="blocktext-small">Over the years, we've had the wonderful opportunity to be able to arrange and perform an abundance of songs we love! 
-                        We like to keep it fresh with new content each scholastic year. Here's what we've been working on so far! 
-                        If you'd like to <a id="blocktext-small-blue" href="/Contact">book us</a> for an event, you can request songs from this list! If we have a minimum of one month's notice, 
-                        we would be happy to arrange a new song of your choice! </p>
 				
-                        <p id="blocktext-small3">............................................................</p>
+                        <p id="blocktext-small">............................................................</p>
 
-                        <p id="blocktext-small3">Isn't She Lovely | Stevie Wonder</p>
+                        <p id="blocktext-small">Isn't She Lovely | Stevie Wonder</p>
 
-                        <p id="blocktext-small3">Holding Out For A Hero | from Shrek (and originally by Bonnie Tyler)</p>
+                        <p id="blocktext-small">Holding Out For A Hero | from Shrek (and originally by Bonnie Tyler)</p>
 
-                        <p id="blocktext-small3">I Put A Spell On You | Bette Midler (from the movie Hocus Pocus)</p>
+                        <p id="blocktext-small">I Put A Spell On You | Bette Midler (from the movie Hocus Pocus)</p>
 
-                        <p id="blocktext-small3">Lovebug | The Jonas Brothers</p>
+                        <p id="blocktext-small">Lovebug | The Jonas Brothers</p>
 
-                        <p id="blocktext-small3">My Future | Billie Eilish</p>
+                        <p id="blocktext-small">My Future | Billie Eilish</p>
 
-                        <p id="blocktext-small3">when the party's over | Billie Eilish</p>
+                        <p id="blocktext-small">when the party's over | Billie Eilish</p>
 
-                        <p id="blocktext-small3">Neu Candy | a mashup of "Neu Roses" by Daniel Caesar and
+                        <p id="blocktext-small">Neu Candy | a mashup of "Neu Roses" by Daniel Caesar and
                             "Sunday Candy" by The Social Experiment</p>
 
-                        <p id="blocktext-small3">Lifelight | Akano</p>
+                        <p id="blocktext-small">Lifelight | Akano</p>
 
-                        <p id="blocktext-small3">............................................................</p>
+                        <p id="blocktext-small">............................................................</p>
 
 
                         <div class="footer">

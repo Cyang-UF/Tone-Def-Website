@@ -2,7 +2,7 @@ import React from "react";
 
 function MemberCard(props) {    
     return(
-        <div class="card" style={{borderRadius: "1rem"}}>
+        <div class="card" style={{borderRadius: "1rem", margin: "0.5rem"}}>
         <img src={props.src} class = "cardImg" />
         <div style={{fontSize: "1.3rem", marginLeft: "1rem", marginRight: "1rem" }}>
             <p><strong>{props.title}</strong></p>
