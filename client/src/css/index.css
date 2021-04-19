@@ -30,6 +30,13 @@ body {
   height: 100rem;
 }
 
+.grid-container-single {  
+  display: grid;
+  grid-template-columns: 1fr;  
+  height: 100rem;
+}
+
+
 .member-grind-container {
   display: grid;
   grid-template-columns: auto auto auto ;  
@@ -47,6 +54,8 @@ min-width: 60rem;
 .RightSide{
 background-color: #f8ece4;
 min-width: 60rem;
+border-radius: 2rem;  
+
 }
 
 .footer {
@@ -73,8 +82,10 @@ min-width: 60rem;
 /* Posts */
 .jumbotron {
   background-color: #fffbf8;
-  border-radius: 1rem;  
+  border-radius: 2rem;  
   max-width: 95%;
+  margin: auto;
+
 }
 
 .display-4 {
@@ -158,6 +169,7 @@ font-family: "Raleway", sans-serif;
 #blocktext-title {
 font-size: 6rem;
 border-style: solid;
+border-radius: 1rem;
 border-color: #000000;
 color: #000000; 
 margin-top: 40px;

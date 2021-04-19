@@ -18,18 +18,9 @@ class UpgradedPostListItem extends React.Component {
         return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
 
-    renderBody(body, MAX_LENGTH) {
+    renderBody(body) {
         return(
-            <div>
-                {{body}.length > MAX_LENGTH ?
-                (
-                    <div>
-                        {`${{body}.substring(0, MAX_LENGTH)}...`}<a href="#">Read more</a>
-                    </div>
-                ) :
-                <p>{body}</p>
-                }
-            </div>
+            <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}>{body}</div>
         );
     } 
 
@@ -51,15 +42,15 @@ class UpgradedPostListItem extends React.Component {
             <Jumbotron>
                 <h1 class="post-text-title"><strong>{post.title}</strong></h1>
                 <h4>
-                    <span class="blocktext-small">{this.renderDate(post.createdAt)}</span>
+                    <span class="blocktext-small"><strong>{this.renderDate(post.createdAt)}</strong></span>
                     <span>, </span>
                     <span>{moment(post.createdAt).fromNow()}</span>
                 </h4>
-                <div class="mt-3">
-                    {this.renderBody(post.html, 100)}
+                <div class="mt-3 mb-3">
+                    {this.renderBody(post.html)}
                 </div>
-                <div><strong>Tags:</strong></div>
-                <div>{post.tags.map((tag)=>`#${tag} `)}</div>
+                <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
+                <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>
                 <div>
                     <button type="button" class="btn btn-info btn-sm" onClick={() => {}}>Like</button>
                 </div>
