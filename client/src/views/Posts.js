@@ -25,10 +25,12 @@ class Posts extends React.Component{
 
     render() {
         return (
-            <div>
-                <h1 id="blocktext" class="mt-3">Post History</h1>
-                <h1 id="blocktext-small">Click 'Posts' tab to reverse the chronological post ordering.</h1>
-                <div>{this.renderList()}</div>
+            <div class="grid-container-single">
+                <div class = "grid-item RightSide">
+                    <h1 id="blocktext" class="mt-3">Post History</h1>
+                    <h1 id="blocktext-small">Click 'Posts' tab to reverse the chronological post ordering.</h1>
+                    <div>{this.renderList()}</div>
+                </div>
             </div>
         );
     }
