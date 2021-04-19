@@ -58,7 +58,7 @@ class Home extends React.Component{
           </div>
 
           <div class = "grid-item RightSide">
-            <p id="blocktext"> Recent Posts </p>
+            <p id="blocktext-title"> Recent Posts </p>
             <h4 id="blocktext-small3" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>Click 'Home' Tab to view oldests posts.</h4>
             <div>{this.renderList()}</div>
             <div class="col text-center mb-4"><Button as={Link} to="/Posts" variant="dark">More</Button>{' '}</div>
