@@ -23,6 +23,34 @@ class About extends React.Component{
                         <p id="blocktext-small">As individuals whom have been so positively impacted by music in our lives,
                         we understand the increbile power that music has to bring people together. This is why service is a cornerstone of our organization.</p>
 
+                        <p id="blocktext" style={{marginTop: "5rem"}}> Our Repertoire </p>
+                        <p id="blocktext-small">Over the years, we've had the wonderful opportunity to be able to arrange and perform an abundance of songs we love! 
+                        We like to keep it fresh with new content each scholastic year. Here's what we've been working on so far! 
+                        If you'd like to <a id="blocktext-small-blue" href="/Contact">book us</a> for an event, you can request songs from this list! If we have a minimum of one month's notice, 
+                        we would be happy to arrange a new song of your choice! </p>
+				
+                        <p id="blocktext-small3">............................................................</p>
+
+                        <p id="blocktext-small3">Isn't She Lovely | Stevie Wonder</p>
+
+                        <p id="blocktext-small3">Holding Out For A Hero | from Shrek (and originally by Bonnie Tyler)</p>
+
+                        <p id="blocktext-small3">I Put A Spell On You | Bette Midler (from the movie Hocus Pocus)</p>
+
+                        <p id="blocktext-small3">Lovebug | The Jonas Brothers</p>
+
+                        <p id="blocktext-small3">My Future | Billie Eilish</p>
+
+                        <p id="blocktext-small3">when the party's over | Billie Eilish</p>
+
+                        <p id="blocktext-small3">Neu Candy | a mashup of "Neu Roses" by Daniel Caesar and
+                            "Sunday Candy" by The Social Experiment</p>
+
+                        <p id="blocktext-small3">Lifelight | Akano</p>
+
+                        <p id="blocktext-small3">............................................................</p>
+
+
                         <div class="footer">
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                             <a href="https://open.spotify.com/artist/7qJdYIQOTw75BsL7o9NaKh?si=Lckb9eFBSmuRFbNDEkknjA&nd=1" class="fa fa-spotify fa-3x"></a>
