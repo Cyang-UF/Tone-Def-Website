@@ -59,19 +59,19 @@ border-radius: 2rem;
 }
 
 .footer {
-  position:absolute;
-  padding-left: 23%;
+  position:static;
+  left: 0;
   bottom: 0;
-  width: 100%;
+  width: 99%;
   display: flex;
-  justify-content:left;
+  justify-content: center;
   }
 
   .footer2 {
     position:static;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 99%;
     display: flex;
     justify-content: center;
     text-align: center;
