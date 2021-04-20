@@ -52,7 +52,9 @@ class UpgradedPostListItem extends React.Component {
                 <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
                 <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>
                 <div>
-                    <button type="button" class="btn btn-info btn-sm" onClick={() => {}}>Like</button>
+                    <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => {}}>Like {post.likeCount}</button>
+                    <button type="button" class="btn btn-warning btn-sm mr-3" onClick={() => {}}>Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm mr-3" onClick={() => {}}>Delete</button>
                 </div>
             </Jumbotron>
 
