@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SPECTRUM from './views/SPECTRUM';
 import About from './views/About';
 import Audition from './views/Audition';
@@ -19,6 +19,7 @@ import PostCreator from './views/PostCreator';
 
 
 const App = () => {
+  const [currentId, setCurrentID] = useState(null);
   const dispatch = useDispatch();
   
   useEffect(() => {

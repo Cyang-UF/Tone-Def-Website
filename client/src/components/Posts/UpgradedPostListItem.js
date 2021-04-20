@@ -1,15 +1,17 @@
 import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import moment from 'moment';
+import { updatePost } from "../../api";
 
 class UpgradedPostListItem extends React.Component {
     constructor(props) {
         super(props);                                   // Be explict in the consturctor to give us access to props of this class
-        this.onShowPost = this.onShowPost.bind(this);   // Bind 'this' to the whole class rather than a single function
+        this.onEditPost = this.onEditPost.bind(this);   // Bind 'this' to the whole class rather than a single function
     }
 
-    onShowPost() {
-        window.location.pathname = `/posts/${this.props.post._id}`; // I can now access props > post > _id because of the constructor
+    onEditPost() {
+        this.props.currentID = this.props._id;
+        window.location.pathname = `/postCreator`;
     }
     
     renderDate(dateString) {
@@ -18,24 +20,6 @@ class UpgradedPostListItem extends React.Component {
         return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
 
-    renderBody(body) {
-        return(
-            <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}>{body}</div>
-        );
-    } 
-
-    
-
-    renderTags(tags) {
-        return tags.map(tag => {
-            return <span key={tag}>{tag}</span>;
-        });
-    }
-
-    renderImage() {
-
-    }
-    
     render() {
         const { post } = this.props;
         return(
@@ -47,7 +31,7 @@ class UpgradedPostListItem extends React.Component {
                     <span>{moment(post.createdAt).fromNow()}</span>
                 </h4>
                 <div class="mt-3 mb-3">
-                    {this.renderBody(post.html)}
+                    <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}>{post.html}</div>
                 </div>
                 <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
                 <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>

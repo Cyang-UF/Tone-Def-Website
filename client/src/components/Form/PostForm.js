@@ -8,7 +8,7 @@ import { createPost, updatePost } from '../../actions/posts';
 const PostForm = ({ currentId, setCurrentId }) => {
     // This is for the upgraded posts
     const [postData, setPostData] = useState({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => (currentId ? state.posts.find((html) => html._id === currentId) : null));
+    const post = useSelector((state) => (currentId ? state.posts.find((p) => p._id === currentId) : null));
     // This allows us to actually dispatch actions
     const dispatch = useDispatch();
 
