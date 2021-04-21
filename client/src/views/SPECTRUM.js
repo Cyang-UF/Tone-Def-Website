@@ -45,7 +45,7 @@ const SPECTRUM = () => {
 
                     <p id="blocktext-title">Soundcloud</p>
                     <div class = "ReactCSS" >
-                    <ReactPlayer class="MusicPlayer" url="https://soundcloud.com/tonedefacappella/when-the-partys-over"/>                                                   
+                    <ReactPlayer class="MusicPlayer" url="https://soundcloud.com/tonedefacappella"/>                                                   
                     </div>
 
 
