@@ -20,11 +20,6 @@ import PostCreator from './views/PostCreator';
 
 const App = () => {
   const [currentId, setCurrentID] = useState(null);
-  const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [currentId, dispatch]);
 
   return (
   <BrowserRouter> 
