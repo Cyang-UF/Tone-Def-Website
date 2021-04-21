@@ -1,9 +1,10 @@
 const router = require("express").Router();     // create a new router for us
 const Post = require("../models/postModel");
+const auth = require("../middleware/auth");
 const mongoose = require('mongoose');
 
 // Where we route for a post request...Since we have to go to mongoose and will be waiting around, use asych with callback
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
     
     // retrive data from request
     const { title, tags, html } = req.body;
@@ -28,25 +29,33 @@ router.get("/", async (req, res) => {               // Return all of the posts i
     res.json(posts);
 });
 
-// Retreive a single post, specified by the id
-router.get("/:id", async (req, res) => {                // The "/:id" means that the req param will store the id from teh DB request
-    const post = await Post.findById(req.params.id);
-    res.json(post);
-})
-
 router.patch('/:id/likePost', async (req, res) => {
     const { id } = req.params;
+
+    /* We have liking open to eveyron. Use this in future to restrict liking to users & admin
+    if (!req.userId) {
+        return res.json({ message: "Unauthenticated" });
+    }
+    */
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
     
     const post = await Post.findById(id);
+
+    const index = post.likes.findIndex((id) => id ===String(req.userId));
+
+    if (index === -1) {
+        post.likes.push(req.userId);
+    } else {
+         post.likes = post.likes.filter((id) => id !== String(req.userId));
+    }
 
     const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
     
     res.json(updatedPost);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
