@@ -6,7 +6,7 @@ import {Nav, Navbar, Button} from 'react-bootstrap';
 
 
 function NavBar(){
-    const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('profile')));
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
@@ -17,8 +17,8 @@ function NavBar(){
     };
 
     useEffect(() => {
-        const token = admin?.token;
-        setAdmin(JSON.parse(localStorage.getItem('profile')));
+        const token = user?.token;
+        setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
     return(   
@@ -36,13 +36,23 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>                    
                     <Nav.Link as={Link} to="/History"><x>Posts</x></Nav.Link>
                 </Nav>
-                <div>{admin ? (
-                    <span id="blocktext-small-white">Hello, {admin.result.name}!</span>
+                <div>{user ? (
+                    <span id="blocktext-small-white">Hello, {user.result.name}!</span>
                 ) : (
                    <></>
                 )}</div>
-                <div>{admin ? (
-                    <Button variant = "outline-light" onClick={logout}>Logout</Button>
+
+                
+                <div>{user ? (
+                    <Button variant = "outline-light" as={Link} to="/postCreator" variant = "outline-light">Create Post</Button>
+                ) : (
+                   <></>
+                )}</div>
+
+                <div class = "mr-4"> </div>
+
+                <div>{user ? (
+                    <Button class = "ml-3" variant = "outline-light" onClick={logout}>Logout</Button>
                 ) : (
                     <Button as={Link} to="/loginPage" variant = "outline-light">Login</Button>
                 )}</div>

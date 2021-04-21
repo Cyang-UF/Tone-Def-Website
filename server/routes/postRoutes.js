@@ -1,15 +1,16 @@
 const router = require("express").Router();     // create a new router for us
 const Post = require("../models/postModel");
+const auth = require("../middleware/auth");
 const mongoose = require('mongoose');
 
 // Where we route for a post request...Since we have to go to mongoose and will be waiting around, use asych with callback
 router.post("/", async (req, res) => {
     
     // retrive data from request
-    const { title, tags, html } = req.body;
+    const post = req.body;
     
     // construct post model
-    const newPost = new Post({ title,tags, html });
+    const newPost = new Post({ ...post, creator: req.userId, createdAt: new Date().toISOString() });
 
     // save post model, try-catch for the success of saving a post or not
     try {
@@ -28,12 +29,6 @@ router.get("/", async (req, res) => {               // Return all of the posts i
     res.json(posts);
 });
 
-// Retreive a single post, specified by the id
-router.get("/:id", async (req, res) => {                // The "/:id" means that the req param will store the id from teh DB request
-    const post = await Post.findById(req.params.id);
-    res.json(post);
-})
-
 router.patch('/:id/likePost', async (req, res) => {
     const { id } = req.params;
 
@@ -43,6 +38,8 @@ router.patch('/:id/likePost', async (req, res) => {
 
     const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
     
+    console.log('LIKE!');
+
     res.json(updatedPost);
 });
 

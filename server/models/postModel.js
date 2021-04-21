@@ -6,6 +6,8 @@ const postSchema = new mongoose.Schema({
     createdAt: { type: Date, default: new Date(), required: false },
     tags: { type: [String] },
     html: { type: String },
+    name: String,
+    creator: String,
     likeCount: {
         type: Number,
         default: 0,
