@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import icon from '../Images/icon.png';
+import decode from 'jwt-decode';
 import { useHistory, Link, useLocation } from 'react-router-dom';
 import {Nav, Navbar, Button} from 'react-bootstrap';
 
@@ -18,6 +19,12 @@ function NavBar(){
 
     useEffect(() => {
         const token = user?.token;
+
+        if (token) {
+            const decodedToken = decode(token);
+            if(decodedToken.exp * 1000 < new Date().getTime()) logout();
+        }
+
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
