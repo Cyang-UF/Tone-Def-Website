@@ -16,6 +16,7 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 const Auth = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
