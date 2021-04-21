@@ -24,14 +24,14 @@ const App = () => {
   
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch]);
+  }, [currentId, dispatch]);
 
   return (
   <BrowserRouter> 
     <div>
         <NavBar/> 
         
-        <Route exact path="/" component={Home}></Route> 
+        <Route exact path="/" component={Home} setCurrentID={setCurrentID}></Route> 
         <Route exact path="/SPECTRUM" component={SPECTRUM}></Route> 
         <Route exact path="/Audition" component={Audition}></Route> 
         <Route exact path="/Donate" component={Donate}></Route> 
@@ -40,7 +40,7 @@ const App = () => {
         <Route exact path = "/posts/:id" component={Post} />
         <Route exact path ="/History" component={Posts}></Route>
         <Route exact path ="/loginPage" component={Login}></Route>
-        <Route exact path ="/postCreator" component={PostCreator}></Route>
+        <Route exact path ="/postCreator" component={PostCreator} currentId={currentId} setCurrentID={setCurrentID}></Route>
         
          
     </div>    

@@ -1,11 +1,11 @@
 import React from "react";
 import PostForm from '../components/Form/PostForm';
 
-const PostCreator = () => {
+const PostCreator = ({ currentID, setCurrentId}) => {
     return (
         <div>
             <p id="blocktext">  Create an Admin Post </p>
-            <PostForm />
+            <PostForm currentId={currentID} setCurrentId={setCurrentId}/>
         </div>
     );
 }
