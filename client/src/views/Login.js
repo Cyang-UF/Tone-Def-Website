@@ -1,6 +1,7 @@
 import React from "react";
 import {Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Auth from '../components/Auth/Auth';
 
 const Login = () => {
     return (

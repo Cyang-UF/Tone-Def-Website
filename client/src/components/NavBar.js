@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import icon from '../Images/icon.png';
-import { Route, Link } from 'react-router-dom';
+import { useHistory, Link, useLocation } from 'react-router-dom';
 import {Nav, Navbar, Button} from 'react-bootstrap';
 
 
 function NavBar(){
+    const [admin, setAdmin] = useState(JSON.parse(localStorage.getItem('profile')));
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+
+    const logout = () => {
+        dispatch({ type: 'LOGOUT' });
+        history.push("/loginPage");    
+    };
+
+    useEffect(() => {
+        const token = admin?.token;
+        setAdmin(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
+
     return(   
         <Navbar expand='lg' fixed="top" variant="light mb-5">
 
@@ -20,8 +36,17 @@ function NavBar(){
                     <Nav.Link as={Link} to="/Donate"><x>Donate</x></Nav.Link>                    
                     <Nav.Link as={Link} to="/History"><x>Posts</x></Nav.Link>
                 </Nav>
-                
-                <Button as={Link} to="/loginPage" variant = "outline-light">Login</Button>
+                <div>{admin ? (
+                    <span id="blocktext-small-white">Hello, {admin.result.name}!</span>
+                ) : (
+                   <></>
+                )}</div>
+                <div>{admin ? (
+                    <Button variant = "outline-light" onClick={logout}>Logout</Button>
+                ) : (
+                    <Button as={Link} to="/loginPage" variant = "outline-light">Login</Button>
+                )}</div>
+
             </Navbar.Collapse>
         </Navbar>  
     );
