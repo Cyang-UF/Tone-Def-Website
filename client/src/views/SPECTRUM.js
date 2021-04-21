@@ -20,7 +20,7 @@ const SPECTRUM = () => {
 
                     <p id="blocktext-small3">Whipping Post</p>
 
-                    <p id="blocktext-small3">Lost in he World</p>
+                    <p id="blocktext-small3">Lost in the World</p>
 
                     <p id="blocktext-small3">............................................................</p>
                     
