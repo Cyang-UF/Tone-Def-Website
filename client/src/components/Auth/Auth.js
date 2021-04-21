@@ -12,9 +12,10 @@ import useStyles from './styles';
 import Input from './Input';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const signinState = { email: '', password: ''};
 
 const Auth = () => {
-  const [form, setForm] = useState(initialState);
+  const [form, setForm] = useState(signinState);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState();
   const dispatch = useDispatch();

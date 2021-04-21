@@ -4,16 +4,16 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-/*
+
 router.post('/signup', async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
 
     try {
-        const oldUser = await UserModal.findOne({ email });
+        const oldUser = await User.findOne({ email });
         if (oldUser) return res.status(400).json({ message: "User already exists" });
         if (password !== confirmPassword) return res.status(400).json({ message: "Passwords do not match" })
         const hashedPassword = await bcrypt.hash(password, 12);
-        const result = await UserModal.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
+        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
         const token = jwt.sign( { email: result.email, id: result._id }, process.env.SECRET, { expiresIn: "1h" } );
         res.status(201).json({ result, token });
     } catch (error) {
@@ -21,12 +21,12 @@ router.post('/signup', async (req, res) => {
         console.log(error);
     }
 });
-*/
+
 
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
     try {
-        const oldUser = await UserModal.findOne({ email });
+        const oldUser = await User.findOne({ email });
         if (!oldUser) return res.status(404).json({ message: "User doesn't exist" });
         const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
         if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
