@@ -6,16 +6,12 @@ const postSchema = new mongoose.Schema({
     createdAt: { type: Date, default: new Date(), required: false },
     tags: { type: [String] },
     html: { type: String },
+    name: String,
+    creator: String,
     likes: {
         type: [String],
         default: [],
     }
-    /*
-    likeCount: {
-        type: Number,
-        default: 0,
-    }
-    */
 });
 
 // Convert the object to a model, which is what Mongoose uses

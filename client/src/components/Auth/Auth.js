@@ -12,10 +12,9 @@ import useStyles from './styles';
 import Input from './Input';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
-const signinState = { email: '', password: ''};
 
 const Auth = () => {
-  const [form, setForm] = useState(signinState);
+  const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState();
   const dispatch = useDispatch();
@@ -25,13 +24,12 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
 
-/*
   const switchMode = () => {
     setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
-*/
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -92,6 +90,13 @@ const Auth = () => {
             onFailure={googleError}
             cookiePolicy="single_host_origin"
           />
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Button onClick={switchMode}>
+                { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
+              </Button>
+            </Grid>
+          </Grid>
         </form>
       </Paper>
     </Container>
