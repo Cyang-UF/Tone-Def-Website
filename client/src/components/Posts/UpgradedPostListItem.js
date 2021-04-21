@@ -8,6 +8,7 @@ const UpgradedPostListItem = ({ post, setCurrentId }) => {
     const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const date = new Date(post.createdAt);
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+//    const token = useState(JSON.parse(localStorage.getItem('profile').result.token));
     const dispatch = useDispatch();
 
     if (user === null) {
@@ -25,13 +26,16 @@ const UpgradedPostListItem = ({ post, setCurrentId }) => {
                 <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
                 <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>
                 <div>
-                    <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => dispatch(likePost(post._id))}>Like {post.likeCount}</button>
+                    
+                    <button type="button" class="btn btn-info btn-sm mr-3" >{post.likeCount} Likes</button>
+                    <span class = "blocktext-small-4"> Sign in or register to like posts</span>
+                    
                 </div>
             </Jumbotron>
         );
     }
 
-    if (user.result.isAdmin === false) {
+    if (user.result.isAdmin === true) {
         return (
             <Jumbotron>
                 <h1 class="post-text-title"><strong>{post.title}</strong></h1>
@@ -46,13 +50,12 @@ const UpgradedPostListItem = ({ post, setCurrentId }) => {
                 <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
                 <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>
                 <div>
-                    <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => dispatch(likePost(post._id))}>Like {post.likeCount}</button>
+                    <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => dispatch(likePost(post._id))}>{post.likeCount} Likes</button>
+                    <button type="button" class="btn btn-danger btn-sm mr-3" onClick={() => dispatch(deletePost(post._id))}>Delete</button>
                 </div>
-            </Jumbotron>
+        </Jumbotron>
         );
     }
-
-
 
     return(
         <Jumbotron>
@@ -68,8 +71,7 @@ const UpgradedPostListItem = ({ post, setCurrentId }) => {
             <div style={{fontSize: "1.3rem", fontFamily: "Raleway"}}><strong>Tags:</strong></div>
             <div style={{fontSize: "1.1rem", fontFamily: "Raleway"}}>{post.tags.map((tag)=>`#${tag} `)}</div>
             <div>
-                <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => dispatch(likePost(post._id))}>Like {post.likeCount}</button>
-                <button type="button" class="btn btn-danger btn-sm mr-3" onClick={() => dispatch(deletePost(post._id))}>Delete</button>
+                <button type="button" class="btn btn-info btn-sm mr-3" onClick={() => dispatch(likePost(post._id))}>{post.likeCount} Likes</button>
             </div>
         </Jumbotron>
     );

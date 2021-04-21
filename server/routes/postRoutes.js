@@ -4,7 +4,7 @@ const auth = require("../middleware/auth");
 const mongoose = require('mongoose');
 
 // Where we route for a post request...Since we have to go to mongoose and will be waiting around, use asych with callback
-router.post("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
     
     // retrive data from request
     const post = req.body;
@@ -29,32 +29,21 @@ router.get("/", async (req, res) => {               // Return all of the posts i
     res.json(posts);
 });
 
-router.patch('/:id/likePost', auth, async (req, res) => {
+router.patch('/:id/likePost', async (req, res) => {
     const { id } = req.params;
-
-    if (!req.userId) {
-        return res.json({ message: "Unauthenticated" });
-    }
-
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
     
     const post = await Post.findById(id);
 
-    const index = post.likes.findIndex((id) => id ===String(req.userId));
-
-    if (index === -1) {
-        post.likes.push(req.userId);
-    } else {
-         post.likes = post.likes.filter((id) => id !== String(req.userId));
-    }
-
     const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
     
+    console.log('LIKE!');
+
     res.json(updatedPost);
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);

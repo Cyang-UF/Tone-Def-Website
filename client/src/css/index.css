@@ -175,6 +175,16 @@ font-family: "Raleway", sans-serif;
 
 }
 
+#blocktext-small4 {
+  font-size: 2rem;
+  color: #945555; 
+  margin-top: 0px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-family: "Raleway", sans-serif;
+  
+  }
+
 #post-text-title {
 font-family: "Raleway", sans-serif;
 }

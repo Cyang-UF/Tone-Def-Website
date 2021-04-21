@@ -8,9 +8,9 @@ const postSchema = new mongoose.Schema({
     html: { type: String },
     name: String,
     creator: String,
-    likes: {
-        type: [String],
-        default: [],
+    likeCount: {
+        type: Number,
+        default: 0,
     }
 });
 
