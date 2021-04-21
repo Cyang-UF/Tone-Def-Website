@@ -29,11 +29,17 @@ const PostForm = ({ currentId, setCurrentId }) => {
         setPostData({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
     };
 
-    if (!user?.result?.isAdmin) {
+    if (user === null) {
         return (
             <p id="blocktext-small">Only Admins can create posts...</p>
         );
-      }
+    }
+
+    if (user.result.isAdmin === false) {
+        return (
+            <p id="blocktext-small">Only Admins can create posts...</p>
+        );
+    }
 
     return(
 
