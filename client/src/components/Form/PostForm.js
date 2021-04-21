@@ -11,20 +11,13 @@ const PostForm = ({ currentId, setCurrentId }) => {
     const post = useSelector((state) => (currentId ? state.posts.find((p) => p._id === currentId) : null));
     // This allows us to actually dispatch actions
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        dispatch(createPost(postData));
-
-        if (currentId === 0) {
-          dispatch(createPost(postData));
-          clear();
-        } else {
-          dispatch(updatePost(currentId, postData));
-          clear();
-        }
+        dispatch(createPost({ ...postData, name: user?.result?.name }));
     };
 
     useEffect(() => {
@@ -35,6 +28,12 @@ const PostForm = ({ currentId, setCurrentId }) => {
         //setCurrentId(0);
         setPostData({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
     };
+
+    if (!user?.result?.isAdmin) {
+        return (
+            <p id="blocktext-small">Only Admins can create posts...</p>
+        );
+      }
 
     return(
 

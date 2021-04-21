@@ -7,10 +7,10 @@ const mongoose = require('mongoose');
 router.post("/", auth, async (req, res) => {
     
     // retrive data from request
-    const { title, tags, html } = req.body;
+    const post = req.body;
     
     // construct post model
-    const newPost = new Post({ title,tags, html });
+    const newPost = new Post({ ...post, creator: req.userId, createdAt: new Date().toISOString() });
 
     // save post model, try-catch for the success of saving a post or not
     try {
@@ -29,14 +29,13 @@ router.get("/", async (req, res) => {               // Return all of the posts i
     res.json(posts);
 });
 
-router.patch('/:id/likePost', async (req, res) => {
+router.patch('/:id/likePost', auth, async (req, res) => {
     const { id } = req.params;
 
-    /* We have liking open to eveyron. Use this in future to restrict liking to users & admin
     if (!req.userId) {
         return res.json({ message: "Unauthenticated" });
     }
-    */
+
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
     
