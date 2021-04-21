@@ -1,5 +1,6 @@
 const router = require("express").Router();     // create a new router for us
 const Post = require("../models/postModel");
+const mongoose = require('mongoose');
 
 // Where we route for a post request...Since we have to go to mongoose and will be waiting around, use asych with callback
 router.post("/", async (req, res) => {
@@ -32,5 +33,29 @@ router.get("/:id", async (req, res) => {                // The "/:id" means that
     const post = await Post.findById(req.params.id);
     res.json(post);
 })
+
+router.patch('/:id/likePost', async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    
+    const post = await Post.findById(id);
+
+    const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+    
+    res.json(updatedPost);
+});
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await Post.findByIdAndRemove(id);
+
+    console.log('DELETE!');
+
+    res.json({ message: "Post deleted successfully." });
+});
 
 module.exports = router;

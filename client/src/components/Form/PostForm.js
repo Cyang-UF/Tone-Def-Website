@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Jumbotron from'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
 
 const PostForm = ({ currentId, setCurrentId }) => {
     // This is for the upgraded posts
     const [postData, setPostData] = useState({ creator: '', title: '', html: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => (currentId ? state.posts.find((html) => html._id === currentId) : null));
+    const post = useSelector((state) => (currentId ? state.posts.find((p) => p._id === currentId) : null));
     // This allows us to actually dispatch actions
     const dispatch = useDispatch();
 
